@@ -8,7 +8,7 @@
    <title>Sweet Bliss Cakes!</title>
     <link rel="icon" href="/images/cake logo.jpeg" type="image/x-icon">
     <style>
-        /* General styling */
+       
         body {
             font-family: Comic Sans MS;
             margin: 0;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        /* Navigation bar */
+       
         .navbar {
             background-color: #e5416a;
             padding: 10px 20px;
@@ -38,7 +38,7 @@
             color: #090106;
         }
 
-        /* Header */
+       
         .header {
             background-color: #e5416a;
             padding: 20px;
@@ -51,7 +51,7 @@
             font-size: xx-large;
         }
 
-        /* Order Review Section */
+      
         .review-container {
             width: 60%;
             margin: auto;
@@ -118,14 +118,14 @@ font-size: large;
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Header -->
+      
         <div class="header">
             <h1>Review Your Order</h1>
         </div>
 
         <br />
 
-        <!-- Order Review Section -->
+        
         <div class="review-container">
             <h2  style="color: #e5416a;">Your Cake Order</h2>
             <asp:Image ID="imgCake" runat="server" Width="230px" Height="252px" />
@@ -158,7 +158,7 @@ font-size: large;
             <p>
                 &nbsp;</p>
 
-            <!-- Button Group -->
+          
             <div class="button-group">
                 <asp:Button ID="btnChange" runat="server" Text="Change" OnClick="btnChange_Click" Visible="True" Height="41px" Width="104px" />
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
