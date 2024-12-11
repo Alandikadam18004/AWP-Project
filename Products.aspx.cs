@@ -36,28 +36,28 @@ namespace web3
             
                 try
                 {
-                    // Get CakeId from CommandArgument
+                    
                     int cakeId = Convert.ToInt32(e.CommandArgument);
 
-                    // Check if user is logged in
+                   
                     if (Session["UserId"] != null && Session["IsLoggedIn"] != null && (bool)Session["IsLoggedIn"] == true)
                     {
-                        int userId = Convert.ToInt32(Session["UserId"]); // Get UserId from the session
-                                                                         // Redirect to BuyNow page if the user is logged in
+                        int userId = Convert.ToInt32(Session["UserId"]); 
+                                                                       
                         Response.Redirect($"BuyNow.aspx?CakeId={cakeId}&UserId={userId}");
                     }
                     else
                     {
-                        // Set the CakeId in Session for later use
+                      
                         Session["CakeId"] = cakeId;
 
-                        // Redirect to the login page if the user is not logged in
+                       
                         Response.Redirect($"Login.aspx?CakeId={cakeId}");
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle unexpected errors
+                    
                     lbl.Text = "An error occurred: " + ex.Message;
                     lbl.Visible = true;
                 }
