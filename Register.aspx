@@ -45,7 +45,7 @@
     font-size: xx-large;
 }
 
-/* Content Section */
+
 .order-container {
     width: 60%;
     margin: auto;
@@ -88,7 +88,7 @@
     font-size: xx-large;
 }
 
-/* Content Section */
+
 .order-container {
     width: 60%;
     margin: auto;
