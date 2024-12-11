@@ -8,7 +8,7 @@
    <title>Sweet Bliss Cakes!</title>
     <link rel="icon" href="/images/cake logo.jpeg" type="image/x-icon">
     <style>
-        /* General styling */
+       
         body {
             font-family: Comic Sans MS;
             margin: 0;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        /* Navigation bar */
+     
         .navbar {
             background-color: #f79ed6;
             padding: 10px 20px;
@@ -38,7 +38,7 @@
             color: #090106;
         }
 
-        /* Header */
+        
         .header {
             background-color: #e5416a;
             padding: 20px;
@@ -51,7 +51,6 @@
             font-size: xx-large;
         }
 
-        /* Payment Section */
         .payment-container {
             width: 60%;
             margin: auto;
@@ -115,14 +114,14 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Header -->
+       
         <div class="header">
             <h1>Payment Details</h1>
         </div>
 
         <br />
 
-        <!-- Payment Section -->
+       
         <div class="payment-container">
             <h2  style="color: #e5416a;">Your Payment Summary</h2>
             <p>
@@ -153,7 +152,7 @@
             <p>
                 &nbsp;</p>
 
-            <!-- Button Group -->
+          
             <div class="button-group">
                 <asp:Button ID="btnPlaceOrder" runat="server" Text="Place Order" OnClick="btnPlaceOrder_Click" Visible="True" Height="40px" Width="148px" />
                 <br />
@@ -171,8 +170,7 @@
 </div>
         </div>
 
-        <!-- Thank You Message -->
-        
+     
     </form>
 </body>
 </html> 
