@@ -10,15 +10,12 @@ namespace web3
         {
             if (!IsPostBack)
             {
-                // Load user information from session
                 LoadUserInformation();
             }
 
-            // Ensure UserId is in session for the Payment page
             if (Session["UserId"] == null)
             {
-                // Redirect to login if UserId is not available in session
-                Response.Redirect("Login.aspx");
+                 Response.Redirect("Login.aspx");
             }
 
         }
@@ -28,7 +25,7 @@ namespace web3
             imgCake.ImageUrl = Session["CakeImage"]?.ToString();
             lblCakeName.Text = Session["CakeName"]?.ToString();
 
-            // Retrieve and display the price
+         
             double cakePrice = Convert.ToDouble(Session["Price"]);
             System.Diagnostics.Debug.WriteLine("Cake Price on Review Page: " + cakePrice);
             double quantityString = Convert.ToDouble(Session["Quantity"]);
@@ -40,7 +37,7 @@ namespace web3
             }
             else
             {
-                lblPrice.Text = "Price not available"; // Fallback text
+                lblPrice.Text = "Price not available";
             }
 
             txtFullName.Text = Session["FullName"]?.ToString();
@@ -54,14 +51,14 @@ namespace web3
 
         protected void btnChange_Click(object sender, EventArgs e)
         {
-            // Enable editing
+           
             txtFullName.ReadOnly = false;
             txtAddress.ReadOnly = false;
             txtPhone.ReadOnly = false;
             txtEmail.ReadOnly = false;
             txtQuantity.ReadOnly = false;
 
-            // Toggle button visibility
+           
             btnChange.Visible = false;
             btnContinue.Visible = false;
             btnOk.Visible = true;
@@ -69,16 +66,12 @@ namespace web3
 
         protected void btnOk_Click(object sender, EventArgs e)
         {
-            // Save updated information in session
             Session["FullName"] = txtFullName.Text;
             Session["Address"] = txtAddress.Text;
             Session["Phone"] = txtPhone.Text;
             Session["Email"] = txtEmail.Text;
             Session["Quantity"] = txtQuantity.Text;
 
-            // Optionally update the database here if required
-
-            // Reload page to display updated information in read-only mode
             Response.Redirect("Review.aspx");
         }
 
@@ -97,11 +90,11 @@ namespace web3
             if (Session["UserId"] == null)
             {
                 lblCakeName.Text += " User not logged in.";
-                Response.Redirect("Login.aspx"); // Redirect to login page
+                Response.Redirect("Login.aspx");
                 return;
             }
 
-            // Redirect to Payment page
+           
             Response.Redirect("Payment.aspx");
 
         }
