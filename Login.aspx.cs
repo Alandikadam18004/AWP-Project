@@ -20,7 +20,7 @@ namespace web3
                     lnkRegister.NavigateUrl = "Register.aspx";
                 }
             }
-            lblError.Visible = false; // Reset error message visibility
+            lblError.Visible = false; 
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
@@ -28,34 +28,28 @@ namespace web3
             string username = txtUserName.Text.Trim();
             string password = txtPassword.Text.Trim();
 
-            // Perform user authentication (you need to implement this method based on your database)
-            int userId = AuthenticateUserAndRetrieveUserId(username, password);
+           int userId = AuthenticateUserAndRetrieveUserId(username, password);
 
             if (userId > 0)
             {
-                // Store UserId in session if authentication is successful
                 Session["UserId"] = userId;
                 Session["IsLoggedIn"] = true;
 
-                // Check if CakeId is present in the query string
-                if (Request.QueryString["CakeId"] != null && Session["UserId"] != null)
+                 if (Request.QueryString["CakeId"] != null && Session["UserId"] != null)
                 {
-                    // If CakeId is present, get it and redirect to BuyNow.aspx
+                    
                     int cakeId = Convert.ToInt32(Request.QueryString["CakeId"]);
 
-                    // Redirect to BuyNow.aspx with both CakeId and UserId as query parameters
-                    Response.Redirect($"BuyNow.aspx?CakeId={cakeId}&UserId={userId}");
+                     Response.Redirect($"BuyNow.aspx?CakeId={cakeId}&UserId={userId}");
                 }
                 else
                 {
-                    // If no CakeId is present, redirect to BuyNow.aspx
                     Response.Redirect("BuyNow.aspx");
                 }
             }
             else
             {
-                // If login fails, show error message
-                lblError.Visible = true;
+               lblError.Visible = true;
                 lblError.Text = "Invalid Password And Username! please Try again";
             }
         }
@@ -74,8 +68,7 @@ namespace web3
 
                 con.Open();
                 object result = cmd.ExecuteScalar();
-                return result != null ? Convert.ToInt32(result) : 0; // Return UserId if found, otherwise 0
-            }
+                return result != null ? Convert.ToInt32(result) : 0;
         }
     }
 }
