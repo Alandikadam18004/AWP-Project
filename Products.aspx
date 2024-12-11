@@ -8,7 +8,7 @@
     <title>Sweet Bliss Cakes!</title>
         <link rel="icon" href="/images/cake logo.jpeg" type="image/x-icon">
     <style>
-        /* General styling */
+       
         body {
             font-family: Comic Sans MS;
             margin: 0;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        /* Navigation bar */
+       
         .navbar {
             background-color: #e5416a;
             padding: 10px 20px;
@@ -38,13 +38,13 @@
             color: #090106;
         }
 
-        /* Page title */
+       
         h2 {
             text-align: center;
             margin: 30px 0;
         }
 
-        /* Product card layout */
+        
         .product-container {
             display: flex;
             flex-wrap: wrap;
@@ -97,7 +97,7 @@
             background-color: #82112d;
         }
 
-        /* Footer */
+        
         footer {
             text-align: center;
             padding: 10px;
@@ -114,7 +114,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Navigation bar -->
+      
         <div class="navbar">
             <div><img src="/images/cake logo.jpeg" class="logo"><strong style="font-size: xx-large; font-family: 'Comic Sans MS';">&nbsp; Sweet Bliss Cakes!</strong></div>
             <div>
@@ -126,12 +126,12 @@
             </div>
         </div>
 
-        <!-- Page title -->
+      
         <h2 style="color: #e5416a;" >Our Products</h2>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:Label style="color: #e5416a; font-size: large;" ID="lbl" runat="server" Text="" ></asp:Label>
 
-        <!-- Product cards -->
+        
         <div class="product-container">
             <asp:Repeater ID="rptProducts" runat="server">
                 <ItemTemplate>
@@ -150,9 +150,8 @@
         &nbsp;&nbsp;
         </div>
 
-        <!-- View Cart link -->
-        <!--<div><a href="Cart.aspx">View Cart</a></div>
-        <!-- Footer -->n 
+     
+        
         <footer>
             &copy; 2024 My Cake Shop. All Rights Reserved.
         </footer>
