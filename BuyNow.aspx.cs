@@ -9,7 +9,7 @@ namespace web3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if CakeId is passed from the previous page
+           
             if (!IsPostBack)
             {
                 if (Request.QueryString["CakeId"] != null)
@@ -41,7 +41,7 @@ namespace web3
                     reader.Read();
                     lblCakeName.Text = reader["CakeName"].ToString();
                     lblPrice.Text = reader["Price"].ToString();
-                    imgCake.ImageUrl = reader["ImagePath"].ToString(); // Assuming the image URL is stored
+                    imgCake.ImageUrl = reader["ImagePath"].ToString(); 
                 }
                 else
                 {
@@ -53,7 +53,7 @@ namespace web3
 
         protected void btnProceedToPayment_Click(object sender, EventArgs e)
         {
-            // Collect user information
+            
             string fullName = txtFullName.Text;
             string address = txtAddress.Text;
             string phone = txtPhone.Text;
@@ -63,7 +63,7 @@ namespace web3
             string cakePrice = lblPrice.Text;
             int userId = Convert.ToInt32(Session["UserId"]);
 
-            // Store the user information in the session
+           
             Session["FullName"] = fullName;
             Session["Address"] = address;
             Session["Phone"] = phone;
@@ -73,15 +73,15 @@ namespace web3
             Session["CakeImage"] = imgCake.ImageUrl;
             Session["Price"] = cakePrice;
             Session["UserId"] = userId;
-            // Check if user is logged in, redirect if not
+            
             if (Session["UserId"] == null)
             {
                 lblCakeName.Text += " User not logged in.";
-                Response.Redirect("Login.aspx"); // Redirect to login page
+                Response.Redirect("Login.aspx"); 
                 return;
             }
 
-            // Redirect to Review page
+           
             Response.Redirect("Review.aspx");
         }
     }
