@@ -22,7 +22,7 @@ namespace web3
 
             try
             {
-                // Retrieve details from the session
+                
                 string cakeName = Session["CakeName"]?.ToString();
                 double priceString = Convert.ToDouble(Session["Price"]);
                 string quantityString = Session["Quantity"]?.ToString();
@@ -31,8 +31,8 @@ namespace web3
                 Debug.WriteLine("Price from Session: " + priceString);
                 Debug.WriteLine("Quantity from Session: " + quantityString);
 
-                total = (priceString - (priceString * 0.10)) + 50; // Assuming a discount and fixed shipping fee
-                Total = total.ToString(); // Format as currency
+                total = (priceString - (priceString * 0.10)) + 50; 
+                Total = total.ToString(); 
                 lblOriginalPrice.Text = priceString.ToString();
                 lblCakeName.Text = cakeName;
                 lblQuantity.Text = quantityString;
@@ -48,7 +48,6 @@ namespace web3
         {
             try
             {
-                // Save the order details in the database (optional, based on your requirement)
                 SaveOrderDetails();
                 SaveOrderTable();
                 btnProducts.Visible = !btnProducts.Visible;
@@ -63,7 +62,6 @@ namespace web3
         {
             try
             {
-                // Retrieve session data
                 int userId = Convert.ToInt32(Session["UserId"]);
                 string fullName = Session["FullName"]?.ToString();
                 string address = Session["Address"]?.ToString();
@@ -83,7 +81,6 @@ namespace web3
                 {
                     using (var cmd = new System.Data.SqlClient.SqlCommand(query, conn))
                     {
-                        // Add parameters
                         cmd.Parameters.AddWithValue("@UserId", userId);
                         cmd.Parameters.AddWithValue("@FullName", fullName ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@Address", address ?? (object)DBNull.Value);
@@ -94,11 +91,9 @@ namespace web3
                         cmd.Parameters.AddWithValue("@Quantity", Quantity ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@Total", lblTotal.Text);
 
-                        // Open connection and execute query
-                        conn.Open();
+                       conn.Open();
                         int rowsAffected = cmd.ExecuteNonQuery();
 
-                        // Check if insertion succeeded
                         if (rowsAffected > 0)
                         {
                             lblErrorMessage.Text = "Order Confirmed! Thank you for shopping with us!";
@@ -137,7 +132,6 @@ namespace web3
                 {
                     using (var cmd = new System.Data.SqlClient.SqlCommand(query, conn))
                     {
-                        // Add parameters
                         cmd.Parameters.AddWithValue("@UserID", userId);
                         cmd.Parameters.AddWithValue("@UserName", userName ?? (object)DBNull.Value);
                         cmd.Parameters.AddWithValue("@CakeName", cakeName ?? (object)DBNull.Value);
