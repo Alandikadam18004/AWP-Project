@@ -8,7 +8,7 @@
    <title>Sweet Bliss Cakes!</title>
     <link rel="icon" href="/images/cake logo.jpeg" type="image/x-icon">
     <style>
-        /* General styling */
+       
         body {
             font-family: Comic Sans MS;
             margin: 0;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        /* Navigation bar */
+       
         .navbar {
             background-color: #f79ed6;
             padding: 10px 20px;
@@ -38,7 +38,7 @@
             color: #090106;
         }
 
-        /* Header */
+      
         .header {
             background-color: #e5416a ;
             padding: 20px;
@@ -51,7 +51,7 @@
             font-size: 36px;
         }
 
-        /* Content Section */
+       
         .content {
             padding: 20px;
             font-size: 18px;
@@ -61,7 +61,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Footer */
+        
         footer {
             text-align: center;
             padding: 10px;
@@ -77,14 +77,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!-- Navigation bar -->
-
-        <!-- Header -->
+       
         <div class="header">
             <h1>About Us</h1>
         </div>
 
-        <!-- Content Section -->
+        
         <div class="content">
             <p class="auto-style1">Welcome to Sweet Bliss Cakes!</p>
             <p style="text-align: center">&nbsp;Your one-stop destination for delicious, freshly baked cakes made with love and perfection. At Sweet Bliss Cakes, we believe that every occasion deserves a touch of sweetness. Whether it’s a birthday, wedding, anniversary, or just a moment to indulge, our wide variety of cakes is sure to delight your taste buds.
@@ -114,7 +112,7 @@
         <br />
         <br />
 
-        <!-- Footer -->
+       
         <footer>
             &copy; 2024 My Cake Shop. All Rights Reserved.
         </footer>
