@@ -8,7 +8,7 @@
     <title>Sweet Bliss Cakes!</title>
     <link rel="icon" href="/images/cake logo.jpeg" type="image/x-icon">
     <style>
-        /* General styling */
+        
         body {
             font-family: Comic Sans MS;
             margin: 0;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        /* Navigation bar */
+       
         .navbar {
             background-color: #e5416a;
             padding: 10px 20px;
@@ -38,7 +38,7 @@
             color: #090106;
         }
 
-        /* Header */
+       
         .header {
             background-color: #e5416a;
             padding: 20px;
@@ -51,7 +51,7 @@
             font-size: xx-large;
         }
 
-        /* Content Section */
+       
         .order-container {
             width: 60%;
             margin: auto;
@@ -110,7 +110,7 @@
     background-color: #82112d;
 }
 
-        /* Footer */
+      
         footer {
             text-align: center;
             padding: 10px;
@@ -122,17 +122,14 @@
 </head>
 <body>
     <form id="form1" runat="server" onsubmit="return validateForm()">
-        <!-- Navigation bar -->
-
-        <!-- Header -->
+        
         <div class="header">
             <h1>Order Cake</h1>
         </div>
 
         <br />
 
-        <!-- Order Details Section -->
-
+       
         <div class="order-container">
             <div class="order-details">
                 <asp:Image ID="imgCake" runat="server" Height="230px" Width="252px" />
@@ -151,7 +148,7 @@
                 </div>
             </div>
 
-            <!-- User Information Section -->
+            
             <h3 style="color: #e5416a;" >Your Information</h3>
             <div>
                 <label>Full Name:&nbsp;&nbsp;&nbsp; </label>&nbsp;<asp:TextBox ID="txtFullName" runat="server" Height="27px" Width="163px" />
@@ -188,16 +185,16 @@
 
         <br />
 
-        <!-- Footer -->
+       
         <footer>
             &copy; 2024 My Cake Shop. All Rights Reserved.
         </footer>
     </form>
 
     <script type="text/javascript">
-        // Client-side validation function
+        
         function validateForm() {
-            // Validate Quantity
+          
             var quantity = document.getElementById("txtQuantity").value;
             if (quantity < 1 || isNaN(quantity)) {
                 document.getElementById("errorQuantity").innerText = "Quantity must be 1 or more.";
@@ -206,7 +203,7 @@
                 document.getElementById("errorQuantity").innerText = "";
             }
 
-            // Validate required fields
+           
             var fullName = document.getElementById("txtFullName").value.trim();
             var address = document.getElementById("txtAddress").value.trim();
             var phone = document.getElementById("txtPhone").value.trim();
@@ -219,7 +216,7 @@
                 document.getElementById("errorFields").innerText = "";
             }
 
-            // Validate Email Format
+          
             var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email)) {
                 document.getElementById("errorEmail").innerText = "Please enter a valid email address.";
@@ -228,7 +225,7 @@
                 document.getElementById("errorEmail").innerText = "";
             }
 
-            // Validate Phone Number
+            
             var phoneRegex = /^\d{10}$/;
             if (!phoneRegex.test(phone)) {
                 document.getElementById("errorPhone").innerText = "Phone number must be exactly 10 digits.";
@@ -237,7 +234,7 @@
                 document.getElementById("errorPhone").innerText = "";
             }
 
-            return true; // Form is valid
+            return true;
         }
     </script>
 </body>
