@@ -24,15 +24,13 @@ namespace web3
         }
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
         {
-            GridView1.PageIndex = e.NewPageIndex; // Set the new page index
-            BindOrderData(); // Rebind the data to the GridView with the updated page index
-        }
+            GridView1.PageIndex = e.NewPageIndex; 
+            BindOrderData(); }
         private void BindOrderData()
         {
-            int userID = Convert.ToInt32(Session["UserID"]); // Current logged-in user ID
+            int userID = Convert.ToInt32(Session["UserID"]); 
             string connectionString = ConfigurationManager.ConnectionStrings["CakeShopDB"].ToString();
 
-            // Fetch orders for the logged-in user based on the correct column names
             string query = @"
                 SELECT 
                     O.OrderID, 
